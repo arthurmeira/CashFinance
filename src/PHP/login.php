@@ -18,7 +18,7 @@
 <body>
     <header>
         <div class="top">
-            <h1>login<span>Page</span></h1>
+            <h1>Cash<span>Finance</span></h1>
             <div class="link">
                 <a href="#"><span>/</span>github</a>
             </div>

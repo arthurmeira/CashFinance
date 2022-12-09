@@ -1,0 +1,5 @@
+1 - Criar tela de login
+2 - Criar tela de cadastro
+3 - Exibir um aviso caso o cadastro ja existir
+4 - Não permitir um cadastro repetido (login e email)
+5 - Cores verdes caso esteja tudo Ok, cores vermelhas onde houver erros / inputs inválidos

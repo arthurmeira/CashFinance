@@ -19,7 +19,7 @@
 <body>
     <header>
         <div class="top">
-            <h1>login<span>Page</span></h1>
+            <h1>Cash<span>Finance</span></h1>
             <div class="link">
                 <a href="#"><span>/</span>github</a>
             </div>
@@ -28,6 +28,12 @@
 
     <main>
         <div class="container">
+
+            <div id="erro-login-email">
+                <h4>ATENÇÃO:</h4>
+                <span>E-mail ou Login já cadastrados!</span>
+            </div>
+
             <div class="card">
                 <form action="cadastrar.php" method="post">
                     <div class="content">
@@ -35,16 +41,16 @@
                         <input type="text" name="nome_cadastro" placeholder="Nome" required><br>
 
                         
-                        <input type="email" name="email_cadastro" placeholder="E-mail" required><br>
+                        <input type="email" name="email_cadastro" placeholder="E-mail" id="email" required><br>
 
                         
-                        <input type="text" name="login_cadastro" placeholder="Login" required><br>
+                        <input type="text" name="login_cadastro" placeholder="Login" id="login" required><br>
 
                         
-                        <input type="password" name="senha_cadastro" placeholder="Senha" required><br>
+                        <input type="password" name="senha_cadastro" id="senha" placeholder="Senha" required><br>
 
                         
-                        <input type="password" name="confirma_senha" placeholder="Confirmar senha" required><br>
+                        <input type="password" name="confirma_senha" id="confirmacao" placeholder="Confirmar senha" required><br>
                     
 
                         <div class="bottom">
@@ -62,13 +68,36 @@
         </div>
     </main>
 
-    <?php
-        include_once('var.php');        
-        if (isset($_POST['sbmt'])) {
-            include_once('create.php');
-            echo "<script>alert('Usuário adicionado com súcesso!')</script>";
-        }   
-    ?>
+    <script>
+                let erro = document.querySelector('#erro-login-email');
+                let login = document.getElementById('login');
+                login.style.borderBottom = '2px solid #FF7373';
+
+                let email = document.getElementById('email');
+                email.style.borderBottom = '2px solid #FF7373';
+                setTimeout(function () { erro.style.display = 'none' }, 3000);
+            </script>
+
+        <?php
+            $email = $_POST['email_cadastro'];
+            $login = $_POST['login_cadastro'];
+            
+            $sql = mysqli_query($conn, "SELECT * FROM usuarios WHERE login = '$login' OR email = '$email'");
+            $row = mysqli_fetch_array($sql); 
+
+            if (isset($_POST['sbmt'])) {
+                if (isset($row['login']) || isset($row['email'])) {
+                    
+                    if ($row['login'] == $login || $row['email'] == $email) {
+                        echo "<script>alert('Login ou E-mail já cadastrados!')</script>";
+                    } else if ($row['login'] !== $login && $row['email'] !== $email) {
+                        include_once('create.php');
+                        echo "<script>alert('Usuário cadastrado!')</script>";
+                    }  
+                } 
+            }  
+
+        ?>
 
 </body>
 </html>

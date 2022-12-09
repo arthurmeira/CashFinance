@@ -7,19 +7,19 @@
 
 body{
     font-family: 'Roboto Mono';
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(65, 65, 65);
 }
 
 /*HEADER*/
 header{
-    background-color: rgb(36, 36, 36);
+    background-color: rgb(35, 35, 35);
     color: white;
     padding: 5px;
-    border-bottom: 5px solid rgb(0, 127, 185);
+    border-bottom: 5px solid rgb(27, 138, 92); 
 }
 
 header span{
-    color: rgb(0, 127, 185);
+    color: rgb(27, 138, 92);
 }
 
 header .top{
@@ -40,6 +40,28 @@ main .container{
     position: relative;
 }
 
+#erro-login-email{
+    border-bottom: 4px solid rgb(255, 115, 115);
+    border-radius: 10px;
+
+    margin: auto;
+    margin-top: 20px;
+
+    width: 450px;
+    height: 50px;
+    background-color: rgb(36, 36, 36);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#erro-login-email h4{
+    color: rgb(255, 115, 115);
+}
+
 main .card{
     width: 400px;
     height: 500px;
@@ -48,8 +70,7 @@ main .card{
     color: white;
     padding: 20px;
     border-radius: 10px;
-    border-bottom: 5px solid rgb(0, 127, 185);
-
+    border-bottom: 5px solid rgb(27, 138, 92); 
     display: block;
     align-items: center;
     justify-content: center;
@@ -72,7 +93,7 @@ main .content input{
     padding: 10px;
     border: none;
     background-color: rgba(0, 0, 0, 0.4);
-    border-bottom: 2px solid rgb(0, 127, 185);
+    border-bottom: 2px solid rgb(27, 138, 92); 
     color: white;
 }
 
@@ -82,8 +103,8 @@ main .content input::placeholder{
 
 
 main .content label{
-    color: rgb(0, 127, 185);
-    font-weight: 600;
+    color: rgb(27, 138, 92); 
+     font-weight: 600;
 }
 
 main .content .enviar input{
@@ -91,7 +112,7 @@ main .content .enviar input{
     padding: 5px;
     float: right;
     cursor: pointer;
-    background-color: rgb(0, 127, 185);
+    background-color: rgb(27, 138, 92);  
     color: white;
     border-radius: 5px;
     border: none;
